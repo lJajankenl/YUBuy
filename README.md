@@ -1,6 +1,68 @@
 # YUBuy
 A York University campus marketplace for students to buy and sell used textbooks, furniture, electronics, and other student essentials.
 
+## My Contributions
+
+### **Frontend Pages**
+
+Built four core pages from scratch in React (Vite), each wired into the application's routing and connected to backend endpoints where they existed at the time:
+
+**Admin Dashboard (`Admin.jsx`)**
+- Tab-based layout for managing listings and users
+- Fetches live listings (`GET /api/listing`) and users (`GET /api/user`) on mount, with loading states for each
+- Listing removal is fully backend-connected (`DELETE /api/listing`)
+- Listing approval and user banning were built as local-state actions at the time (no approve/ban endpoints existed yet) — a teammate later connected these to their backend endpoints
+- Status badges (Active / Flagged / Reported) styled to match the app's dark theme
+
+**Checkout (`Checkout.jsx`)**
+- Full checkout form: shipping info, payment details, and an order summary section (shipping, tax, total cost)
+- Regex-based client-side validation across the form: name fields (letters/spaces/hyphens only), postal code, phone number (auto-inserted `-` separators, capped at 10 digits), card number and security code (digits only), and expiration date (auto-inserted `/`)
+- On submit, validated at the time and redirected to the order confirmation page; a teammate later connected this flow to a real backend checkout endpoint
+
+**Sell Item (`SellItem.jsx`)**
+- Form for sellers to list an item: title, description, price, category, condition, and location
+- Wired to `POST /api/listing` to create a real listing in the database
+- Category list is intentionally hardcoded (reverted from an earlier backend fetch) to keep the form testable independent of category-seeding state
+- Redirects to the seller's profile page on successful submission
+
+**Order Confirmation (`OrderConfirmation.jsx`)**
+- Confirmation page shown after a successful checkout submission, with a link back to listings
+- Routed in from `Checkout.jsx` on successful form submission
+
+---
+
+### **Integration & Routing**
+
+- Added and fixed routes in `App.jsx` for each new page as it was built, including resolving a merge conflict that briefly broke routing
+- Fixed a typo'd import (`SellerItem` → `SellItem`) that was breaking the build
+- Added a "+ Sell Item" button to `SellerProfile.jsx` (a page primarily built by a teammate) linking sellers directly to the Sell Item page
+- Wired the "Sell an item" button on the Listings page to navigate to the Sell Item page
+
+---
+
+### **Design Documentation**
+
+- Authored PlantUML sequence diagrams covering six major user flows — Buyer, Seller, Admin, Authentication, Password Reset, and Wishlist — for the project's final report
+- Drafted the Implementation Plan section of the project proposal, covering the React/Vite frontend, Node/Express backend, PostgreSQL/Prisma ORM, Render deployment, and Cloudinary image storage
+- Aligned the three-tier PlantUML architecture diagram in the proposal with the languages/frameworks table for consistency
+
+---
+
+## Tech Stack
+
+**Frontend:**
+- React 18, Vite
+- Inline style objects for a consistent dark theme (`#2a2a2a`, `#CC0000`, `#181313`)
+
+**Backend (integrated with, not authored):**
+- Node.js, Express
+- PostgreSQL, Prisma ORM
+- Render (deployment), Cloudinary (image storage)
+
+---
+
+## Original Project
+
 ## Table of Contents
 - Project Structure
 - Getting Started
