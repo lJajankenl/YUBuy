@@ -1,6 +1,8 @@
 # YUBuy
 A York University campus marketplace for students to buy and sell used textbooks, furniture, electronics, and other student essentials.
 
+---
+
 ## My Contributions
 
 ### **Frontend Pages**
