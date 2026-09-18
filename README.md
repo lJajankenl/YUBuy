@@ -1,7 +1,14 @@
 # YUBuy
 A York University campus marketplace for students to buy and sell used textbooks, furniture, electronics, and other student essentials.
 
+Note: This is a forked version of a group project. This README documents my specific contributions alongside the original project setup documentation.
 ---
+
+## Table of Contents
+- Project Structure
+- Getting Started
+- Database Setup
+- Data Lake Setup
 
 ## My Contributions
 
@@ -64,12 +71,6 @@ Built four core pages from scratch in React (Vite), each wired into the applicat
 ---
 
 ## Original Project
-
-## Table of Contents
-- Project Structure
-- Getting Started
-- Database Setup
-- Data Lake Setup
 
 ## Project Structure
 The project is a monorepo containing the frontend and backend of the YUBuy application
